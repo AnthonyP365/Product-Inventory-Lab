@@ -4,13 +4,15 @@ public class ComicBook {
 //    The comic book object
     private String name;
     private int id;
+    private int qty;
     private float price;
 
     public ComicBook() {}
 
-    public ComicBook(String name, int id, float price) {
+    public ComicBook(String name, int id, int qty, float price) {
         this.name = name;
         this.id = id;
+        this.qty = qty;
         this.price = price;
     }
 
@@ -28,6 +30,14 @@ public class ComicBook {
 
     public int getId() {
         return id;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public int getQty() {
+        return qty;
     }
 
     public void setPrice(float price) {

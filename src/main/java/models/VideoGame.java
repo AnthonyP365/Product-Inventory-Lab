@@ -5,14 +5,16 @@ public class VideoGame {
     private String name;
     private int id;
     private String genre;
+    private int qty;
     private float price;
 
     public VideoGame() {}
 
-    public VideoGame(String name, int id, String genre, float price) {
+    public VideoGame(String name, int id, String genre, int qty, float price) {
         this.name = name;
         this.id = id;
         this.genre = genre;
+        this.qty = qty;
         this.price = price;
     }
 
@@ -40,11 +42,19 @@ public class VideoGame {
         return genre;
     }
 
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
     public void setPrice(float price) {
         this.price = price;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 }

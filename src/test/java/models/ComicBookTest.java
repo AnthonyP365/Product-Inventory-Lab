@@ -32,6 +32,19 @@ public class ComicBookTest {
     }
 
     @Test
+    public void setQtyTest() {
+//        given
+        int expected = 20;
+
+//        when
+        ComicBook comic = new ComicBook();
+        comic.setQty(expected);
+
+//        then
+        Assert.assertEquals(expected, comic.getQty());
+    }
+
+    @Test
     public void setPriceTest() {
 //        given
         float expected = 20.00f;
@@ -49,14 +62,16 @@ public class ComicBookTest {
 //        given
         String expectedName = "Black Panther #002";
         int expectedId = 2266;
+        int expectedQty = 10;
         float expectedPrice = 65.00f;
 
 //        when
-        ComicBook comic = new ComicBook(expectedName, expectedId, expectedPrice);
+        ComicBook comic = new ComicBook(expectedName, expectedId, expectedQty, expectedPrice);
 
 //        then
         Assert.assertEquals(expectedName, comic.getName());
         Assert.assertEquals(expectedId, comic.getId());
+        Assert.assertEquals(expectedQty, comic.getQty());
         Assert.assertEquals(expectedPrice, comic.getPrice(), 0.01);
     }
 }
