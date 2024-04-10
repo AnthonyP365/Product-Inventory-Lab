@@ -43,4 +43,20 @@ public class ComicBookTest {
 //        then
         Assert.assertEquals(expected, comic.getPrice(), 0.01);
     }
+
+    @Test
+    public void constructorTest() {
+//        given
+        String expectedName = "Black Panther #002";
+        int expectedId = 2266;
+        float expectedPrice = 65.00f;
+
+//        when
+        ComicBook comic = new ComicBook(expectedName, expectedId, expectedPrice);
+
+//        then
+        Assert.assertEquals(expectedName, comic.getName());
+        Assert.assertEquals(expectedId, comic.getId());
+        Assert.assertEquals(expectedPrice, comic.getPrice(), 0.01);
+    }
 }

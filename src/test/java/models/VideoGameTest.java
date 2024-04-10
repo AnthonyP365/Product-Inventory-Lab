@@ -56,4 +56,22 @@ public class VideoGameTest {
 //        then
         Assert.assertEquals(expected, videoGame.getPrice(), 0.01);
     }
+
+    @Test
+    public void constructorTest() {
+//        given
+        String expectedName = "Skyrim";
+        int expectedId = 5533;
+        String expectedGenre = "Action RPG";
+        float expectedPrice = 60.00f;
+
+//        when
+        VideoGame videoGame = new VideoGame(expectedName, expectedId, expectedGenre, expectedPrice);
+
+//        then
+        Assert.assertEquals(expectedName, videoGame.getName());
+        Assert.assertEquals(expectedId, videoGame.getId());
+        Assert.assertEquals(expectedGenre, videoGame.getGenre());
+        Assert.assertEquals(expectedPrice, videoGame.getPrice(), 0.01);
+    }
 }

@@ -7,6 +7,15 @@ public class VideoGame {
     private String genre;
     private float price;
 
+    public VideoGame() {}
+
+    public VideoGame(String name, int id, String genre, float price) {
+        this.name = name;
+        this.id = id;
+        this.genre = genre;
+        this.price = price;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
