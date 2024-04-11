@@ -25,19 +25,18 @@ public class VideoGameService {
 
     public VideoGame[] findAll() {
         VideoGame[] result = new VideoGame[inventory.size()];
-        for (int i = 0; i < inventory.size(); i++) {
-            result[i] = inventory.get(i);
+        int i = 0;
+        for (VideoGame game : inventory) {
+            result[i] = game;
+            i++;
         }
         return result;
     }
 
     public boolean delete(int id) {
         for (VideoGame game : inventory) {
-            if (game.getId() == id && id < inventory.size()) {
-                inventory.remove(id);
-                return true;
-            } else if (game.getId() == id && id == inventory.size()) {
-                inventory.remove(inventory.size()-1);
+            if (game.getId() == id) {
+                inventory.remove(game);
                 return true;
             }
         }

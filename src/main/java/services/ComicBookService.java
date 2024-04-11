@@ -25,19 +25,18 @@ public class ComicBookService {
 
     public ComicBook[] findAll() {
         ComicBook[] result = new ComicBook[inventory.size()];
-        for (int i = 0; i < inventory.size(); i++) {
-            result[i] = inventory.get(i);
+        int i = 0;
+        for (ComicBook comic : inventory) {
+            result[i] = comic;
+            i++;
         }
         return result;
     }
 
     public boolean delete(int id) {
         for (ComicBook comic : inventory) {
-            if (comic.getId() == id && id < inventory.size()) {
-                inventory.remove(id);
-                return true;
-            } else if (comic.getId() == id && id == inventory.size()) {
-                inventory.remove(inventory.size()-1);
+            if (comic.getId() == id) {
+                inventory.remove(comic);
                 return true;
             }
         }
