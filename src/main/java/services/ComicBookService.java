@@ -42,4 +42,19 @@ public class ComicBookService {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        String result = "";
+        if (inventory.isEmpty()) {
+            return "Inventory is Empty";
+        }
+        for (ComicBook comic : inventory) {
+            result = "Product ID: " + comic.getId() + "\n" +
+                    "Name: " + comic.getName() + "\n" +
+                    "Quantity: " + comic.getQty() + "\n" +
+                    "Price: " + comic.getPrice() + "\n";
+        }
+        return result;
+    }
 }

@@ -65,4 +65,19 @@ public class VideoGameServiceTest {
 
         Assert.assertTrue(actual);
     }
+
+    @Test
+    public void toStringTest() {
+        VideoGameService videoGameService = new VideoGameService();
+        VideoGame game1 = videoGameService.create("new", "action", 1, 1);
+
+        String actual = videoGameService.toString();
+        String expected = "Product ID: 1\n" +
+                "Name: new\n" +
+                "Genre: action\n" +
+                "Quantity: 1\n" +
+                "Price: 1.0\n";
+
+        Assert.assertEquals(expected, actual);
+    }
 }

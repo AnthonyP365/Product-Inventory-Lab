@@ -61,4 +61,18 @@ public class ComicBookServiceTest {
 
         Assert.assertTrue(actual);
     }
+
+    @Test
+    public void toStringTest() {
+        ComicBookService comicBookService = new ComicBookService();
+        ComicBook comic1 = comicBookService.create("new", 1, 1);
+
+        String actual = comicBookService.toString();
+        String expected = "Product ID: 1\n" +
+                "Name: new\n" +
+                "Quantity: 1\n" +
+                "Price: 1.0\n";
+
+        Assert.assertEquals(expected, actual);
+    }
 }

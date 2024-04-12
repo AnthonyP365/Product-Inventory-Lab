@@ -47,4 +47,11 @@ public class ComicBook {
     public float getPrice() {
         return price;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Comic Book\n" +
+//                "Name: " + getName() + "\n" +
+//                ""
+//    }
 }

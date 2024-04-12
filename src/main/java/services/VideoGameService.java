@@ -42,4 +42,20 @@ public class VideoGameService {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        String result = "";
+        if (inventory.isEmpty()) {
+            return "Inventory is Empty";
+        }
+        for (VideoGame videoGame : inventory) {
+            result = "Product ID: " + videoGame.getId() + "\n" +
+                    "Name: " + videoGame.getName() + "\n" +
+                    "Genre: " + videoGame.getGenre() + "\n" +
+                    "Quantity: " + videoGame.getQty() + "\n" +
+                    "Price: " + videoGame.getPrice() + "\n";
+        }
+        return result;
+    }
 }
