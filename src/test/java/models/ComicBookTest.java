@@ -66,7 +66,7 @@ public class ComicBookTest {
         float expectedPrice = 65.00f;
 
 //        when
-        ComicBook comic = new ComicBook(expectedName, expectedId, expectedQty, expectedPrice);
+        ComicBook comic = new ComicBook(expectedId, expectedName, expectedQty, expectedPrice);
 
 //        then
         Assert.assertEquals(expectedName, comic.getName());

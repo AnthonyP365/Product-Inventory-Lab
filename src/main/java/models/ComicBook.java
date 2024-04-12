@@ -9,7 +9,7 @@ public class ComicBook {
 
     public ComicBook() {}
 
-    public ComicBook(String name, int id, int qty, float price) {
+    public ComicBook(int id, String name, int qty, float price) {
         this.name = name;
         this.id = id;
         this.qty = qty;
@@ -48,10 +48,4 @@ public class ComicBook {
         return price;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Comic Book\n" +
-//                "Name: " + getName() + "\n" +
-//                ""
-//    }
 }

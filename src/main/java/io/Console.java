@@ -20,7 +20,7 @@ public class Console {
     }
 
     public static void printOut(String prompt) {
-        System.out.println(prompt);
+            System.out.println(prompt);
     }
 
     public static void printErr(String prompt) {

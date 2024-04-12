@@ -3,16 +3,16 @@ import io.Menu;
 import services.ComicBookService;
 import services.VideoGameService;
 
-public class Application {
-    //private ComicBookService comicBookService = new ComicBookService();
-    //private VideoGameService videoGameService = new VideoGameService();
+import java.io.IOException;
 
-    public static void main(String[] args) {
+public class Application {
+
+    public static void main(String[] args) throws IOException {
         Application app = new Application();
         app.init();
     }
 
-    public void init() {
+    public void init() throws IOException {
         Console.printWelcome();
         Menu.mainMenu();
     }

@@ -80,7 +80,7 @@ public class VideoGameTest {
         float expectedPrice = 60.00f;
 
 //        when
-        VideoGame videoGame = new VideoGame(expectedName, expectedId, expectedGenre, expectedQty, expectedPrice);
+        VideoGame videoGame = new VideoGame(expectedId, expectedName, expectedGenre, expectedQty, expectedPrice);
 
 //        then
         Assert.assertEquals(expectedName, videoGame.getName());

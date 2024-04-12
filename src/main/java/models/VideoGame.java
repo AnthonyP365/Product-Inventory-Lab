@@ -10,7 +10,7 @@ public class VideoGame {
 
     public VideoGame() {}
 
-    public VideoGame(String name, int id, String genre, int qty, float price) {
+    public VideoGame(int id, String name, String genre, int qty, float price) {
         this.name = name;
         this.id = id;
         this.genre = genre;
