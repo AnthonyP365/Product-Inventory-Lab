@@ -1,13 +1,14 @@
 package services;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import io.Console;
 import models.ComicBook;
 import utils.CSVUtils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -93,6 +94,26 @@ public class ComicBookService {
 //                Create a new item using the CSV data to set the initial state and add it to the inventory.
                 inventory.add(new ComicBook(id, name, qty, price));
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NumberFormatException nfe) {
+            Console.printErr("Error parsing data!");
+        }
+    }
+
+    public void writeJSON() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonFile = "/Users/anthony/Documents/Projects/Product-Inventory-Lab/src/main/java/utils/comicbooks.json";
+        ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+        writer.writeValue(new File(jsonFile), inventory);
+    }
+
+    public void loadJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonFile = "/Users/anthony/Documents/Projects/Product-Inventory-Lab/src/main/java/utils/comicbooks.json";
+
+        try {
+            inventory = objectMapper.readValue(new File(jsonFile), new TypeReference<ArrayList<ComicBook>>() {});
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NumberFormatException nfe) {

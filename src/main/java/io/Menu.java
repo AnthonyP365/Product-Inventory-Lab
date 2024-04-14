@@ -38,7 +38,7 @@ public class Menu {
     }
 
     public static void comicBookMenu() throws IOException {
-        comics.loadData();
+        comics.loadJSON();
         boolean end = false;
         while (!end) {
             String input = Console.userInput("\n** Comic Book Inventory Services **\n\n" +
@@ -57,7 +57,7 @@ public class Menu {
                     break;
 
                 case "2":
-                    comics.writeData();
+                    comics.writeJSON();
                     break;
 
                 case "3":
